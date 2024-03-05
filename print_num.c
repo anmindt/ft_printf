@@ -6,7 +6,7 @@
 /*   By: anmindt <anmindt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 12:59:49 by anmindt           #+#    #+#             */
-/*   Updated: 2024/03/05 16:38:31 by anmindt          ###   ########.fr       */
+/*   Updated: 2024/03/05 20:52:27 by anmindt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,13 @@ void	ft_print_nbr(int n, int *count)
 
 	if (n == -2147483648)
 	{
+		printf("test");
 		write(1, "-2147483648", 11);
-		count += 11;
+		(*count) += 11;
 	}
 	else if (n < 0)
 	{
-		write(1, "-", 1);
+		print_c('-', count);
 		n = -n;
 		ft_print_nbr(n, count);
 	}

@@ -29,6 +29,10 @@ int	ft_printf(const char *str, ...)
 			print_form(*str, &count, argptr);
 			str++;
 		}
+		if (*str == '\0')
+			break ;
+		if (*str == '%')
+			continue ;
 		print_c(*str, &count);
 		str++;
 	}
@@ -36,19 +40,12 @@ int	ft_printf(const char *str, ...)
 	return (count);
 }
 
-int main() {
-    char    *str;
-	int		n1;
-	int		n2;
-
-    str = "helo%%1";
-	// n1 = printf("1");
-	// n2 = printf(0);
-	ft_printf("%c", '0');
+/* int main() {
+	ft_printf(" %%%% ");
 	//printf("%c", '0');
 	// ft_printf("%d\n", n1);
 	// ft_printf("%d\n", n2);
 	// printf("%x %X hi %cll %s %u %u %p\n", 10, 26, 'a', "dort", 1, 2, str);
 
   return 0;
-}
+} */

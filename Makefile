@@ -6,7 +6,7 @@
 #    By: anmindt <anmindt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/05 13:21:45 by anmindt           #+#    #+#              #
-#    Updated: 2024/03/05 16:28:42 by anmindt          ###   ########.fr        #
+#    Updated: 2024/03/05 21:27:41 by anmindt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ FLAGS = -Wall -Wextra -Werror
 SRC = ft_printf.c\
 		print_c.c\
 		print_num.c\
-		select_format.c
+		select_format.c\
+		print_unum.c
 
 OBJ = $(SRC:.c=.o)
 

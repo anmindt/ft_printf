@@ -6,7 +6,7 @@
 /*   By: anmindt <anmindt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:36:50 by anmindt           #+#    #+#             */
-/*   Updated: 2024/03/05 17:41:41 by anmindt          ###   ########.fr       */
+/*   Updated: 2024/03/05 20:51:07 by anmindt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	print_form(char str, int *count, va_list argptr);
 
 //functions for converting and printing numbers
 void	ft_print_nbr(int n, int *count);
+void	ft_print_unum(unsigned int n, int *count);
 int		ft_narrlen(unsigned long long n);
 char	*ft_narr(unsigned long long n);
 void	ft_print_and_free(char *str, int *count);

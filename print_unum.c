@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_c.c                                          :+:      :+:    :+:   */
+/*   print_unum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anmindt <anmindt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 13:01:50 by anmindt           #+#    #+#             */
-/*   Updated: 2024/03/05 21:11:56 by anmindt          ###   ########.fr       */
+/*   Created: 2024/03/05 20:42:21 by anmindt           #+#    #+#             */
+/*   Updated: 2024/03/05 20:49:46 by anmindt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-//einfache print ft für chars, die ad on zum count zurück gibt
-//alternativ geht auch *count += 1
-void	print_c(char c, int *count)
+void	ft_print_unum(unsigned int n, int *count)
 {
-	write(1, &c, 1);
-	(*count)++;
-}
+	char	c;
 
-//ft zum printen eines strings inkl. count erhöhen
-void	put_str(char *str, int *count)
-{
-	if (str == NULL)
-		str = "(null)";
-	while (*str)
+	if (n > 9)
 	{
-		print_c(*str, count);
-		str++;
+		ft_print_nbr(n / 10, count);
+		ft_print_nbr(n % 10, count);
+	}
+	else
+	{
+		c = n + 48;
+		print_c(c, count);
 	}
 }
+
