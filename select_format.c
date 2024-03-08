@@ -6,7 +6,7 @@
 /*   By: anmindt <anmindt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 13:01:09 by anmindt           #+#    #+#             */
-/*   Updated: 2024/03/05 20:47:12 by anmindt          ###   ########.fr       */
+/*   Updated: 2024/03/08 19:59:02 by anmindt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,16 @@ void	print_form(char str, int *count, va_list argptr)
 	else if (str == 'u')
 		ft_print_unum(va_arg(argptr, unsigned int), count);
 	else if (str == 'x' || str == 'X')
-		ft_dectohex_up(va_arg(argptr, unsigned long long), str, count);
+		ft_dectohex_up(va_arg(argptr, unsigned int), str, count);
 	else if (str == 'p')
 	{
-		write(1, "0x", 2);
-		(*count) += 2;
-		ft_dectohex_up((unsigned long long)
-			va_arg(argptr, void *), str, count);
+		if ((va_arg(argptr, void *) != NULL))
+		{
+			put_str("0x", count);
+			ft_dectohex_up((unsigned long long)
+				va_arg(argptr, void *), str, count);
+		}
+		else
+			put_str("(nil)", count);
 	}
 }

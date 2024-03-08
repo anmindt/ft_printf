@@ -6,7 +6,7 @@
 /*   By: anmindt <anmindt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 12:59:49 by anmindt           #+#    #+#             */
-/*   Updated: 2024/03/05 20:52:27 by anmindt          ###   ########.fr       */
+/*   Updated: 2024/03/08 19:27:47 by anmindt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	ft_print_nbr(int n, int *count)
 
 	if (n == -2147483648)
 	{
-		printf("test");
 		write(1, "-2147483648", 11);
 		(*count) += 11;
 	}
@@ -42,11 +41,13 @@ void	ft_print_nbr(int n, int *count)
 }
 
 //Länge des strings/Arrays ermitteln
-int	ft_narrlen(unsigned long long n)
+int	ft_narrlen(unsigned int n)
 {
 	int	i;
 
 	i = 0;
+	if (n == 0)
+		return (1);
 	while (n > 0)
 	{
 		n = n / 16;
@@ -56,7 +57,7 @@ int	ft_narrlen(unsigned long long n)
 }
 
 //Array mit der Zahl als Hexadezimal-Version entsprechenden Größe erstellen
-char	*ft_narr(unsigned long long n)
+char	*ft_narr(unsigned int n)
 {
 	char	*arr;
 	int		i;
@@ -87,7 +88,7 @@ void	ft_print_and_free(char *str, int *count)
 //Hexadezimal Konversion mit Rückgabe des entsprechenden Strings
 //string mit hexadezimal-version wird erstelt
 
-void	ft_dectohex_up(unsigned long long n, char c, int *count)
+void	ft_dectohex_up(unsigned int n, char c, int *count)
 {
 	int		i;
 	char	*arr;
@@ -99,11 +100,11 @@ void	ft_dectohex_up(unsigned long long n, char c, int *count)
 	arr = ft_narr(n);
 	u_hex = "0123456789ABCDEF";
 	l_hex = "0123456789abcdef";
-	if (c == 'X' || c == 'p')
+	if (c == 'X')
 		hex = u_hex;
 	else
 		hex = l_hex;
-	while (n > 0)
+	while (i > 0)
 	{
 		arr[i - 1] = hex[n % 16];
 		n = n / 16;

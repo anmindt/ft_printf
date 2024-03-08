@@ -6,7 +6,7 @@
 /*   By: anmindt <anmindt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 20:42:21 by anmindt           #+#    #+#             */
-/*   Updated: 2024/03/05 20:49:46 by anmindt          ###   ########.fr       */
+/*   Updated: 2024/03/08 18:47:23 by anmindt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,3 @@ void	ft_print_unum(unsigned int n, int *count)
 		print_c(c, count);
 	}
 }
-
