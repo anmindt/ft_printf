@@ -39,12 +39,12 @@ int	ft_printf(const char *str, ...)
 	va_end(argptr);
 	return (count);
 }
-int main() {
+/* int main() {
 	int n1;
 	int n2;
 
-	n1 = ft_printf(" %p ", -1);
-	n2 = printf(" %p ", -1);
+	n1 = ft_printf(" %p", LONG_MIN);
+	n2 = printf(" %p", LONG_MIN);
 
 	printf("\n%d", n1);
 	printf("\n%d", n2);
@@ -54,3 +54,4 @@ int main() {
 
   return 0;
 }
+ */

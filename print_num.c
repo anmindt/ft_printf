@@ -6,7 +6,7 @@
 /*   By: anmindt <anmindt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 12:59:49 by anmindt           #+#    #+#             */
-/*   Updated: 2024/03/08 19:27:47 by anmindt          ###   ########.fr       */
+/*   Updated: 2024/03/11 14:21:56 by anmindt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ void	ft_print_nbr(int n, int *count)
 }
 
 //Länge des strings/Arrays ermitteln
-int	ft_narrlen(unsigned int n)
+int	ft_narrlen(unsigned long long n)
 {
 	int	i;
 
 	i = 0;
 	if (n == 0)
 		return (1);
-	while (n > 0)
+	while (n != 0)
 	{
 		n = n / 16;
 		i++;
@@ -57,7 +57,7 @@ int	ft_narrlen(unsigned int n)
 }
 
 //Array mit der Zahl als Hexadezimal-Version entsprechenden Größe erstellen
-char	*ft_narr(unsigned int n)
+char	*ft_narr(unsigned long long n)
 {
 	char	*arr;
 	int		i;
@@ -88,7 +88,7 @@ void	ft_print_and_free(char *str, int *count)
 //Hexadezimal Konversion mit Rückgabe des entsprechenden Strings
 //string mit hexadezimal-version wird erstelt
 
-void	ft_dectohex_up(unsigned int n, char c, int *count)
+void	ft_dectohex_up(unsigned long long n, char c, int *count)
 {
 	int		i;
 	char	*arr;

@@ -6,7 +6,7 @@
 /*   By: anmindt <anmindt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 13:01:09 by anmindt           #+#    #+#             */
-/*   Updated: 2024/03/08 19:59:02 by anmindt          ###   ########.fr       */
+/*   Updated: 2024/03/11 14:19:25 by anmindt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	print_form(char str, int *count, va_list argptr)
 {
+	void	*ptr;
+
 	if (str == '%')
 		print_c(str, count);
 	else if (str == 'c')
@@ -28,11 +30,11 @@ void	print_form(char str, int *count, va_list argptr)
 		ft_dectohex_up(va_arg(argptr, unsigned int), str, count);
 	else if (str == 'p')
 	{
-		if ((va_arg(argptr, void *) != NULL))
+		ptr = (va_arg(argptr, void *));
+		if (ptr != NULL)
 		{
 			put_str("0x", count);
-			ft_dectohex_up((unsigned long long)
-				va_arg(argptr, void *), str, count);
+			ft_dectohex_up((unsigned long long) ptr, str, count);
 		}
 		else
 			put_str("(nil)", count);
