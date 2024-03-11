@@ -6,7 +6,7 @@
 /*   By: anmindt <anmindt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 12:59:49 by anmindt           #+#    #+#             */
-/*   Updated: 2024/03/11 14:21:56 by anmindt          ###   ########.fr       */
+/*   Updated: 2024/03/11 17:33:49 by anmindt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,22 +73,14 @@ char	*ft_narr(unsigned long long n)
 //write str in stio and free the allocated mem space of it afterwards
 void	ft_print_and_free(char *str, int *count)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		(*count)++;
-		i++;
-	}
+	put_str(str, count);
 	free(str);
 }
 
 //Hexadezimal Konversion mit Rückgabe des entsprechenden Strings
 //string mit hexadezimal-version wird erstelt
 
-void	ft_dectohex_up(unsigned long long n, char c, int *count)
+void	ft_dectohex(unsigned long long n, char c, int *count)
 {
 	int		i;
 	char	*arr;

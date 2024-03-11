@@ -6,7 +6,7 @@
 /*   By: anmindt <anmindt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:36:50 by anmindt           #+#    #+#             */
-/*   Updated: 2024/03/11 14:19:46 by anmindt          ###   ########.fr       */
+/*   Updated: 2024/03/11 17:32:56 by anmindt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_print_unum(unsigned int n, int *count);
 int		ft_narrlen(unsigned long long n);
 char	*ft_narr(unsigned long long n);
 void	ft_print_and_free(char *str, int *count);
-void	ft_dectohex_up(unsigned long long n, char c, int *count);
+void	ft_dectohex(unsigned long long n, char c, int *count);
 
 //functions for printing chars and strings
 void	print_c(char c, int *count);
